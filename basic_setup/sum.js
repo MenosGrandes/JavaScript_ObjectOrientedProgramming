@@ -7,6 +7,7 @@ function convertFromMeterToJard(meter) {
 function convertFromJardToMeter(jard) {
   return jard * 0.914399999999998;
 }
+
 function convert(from, conversionCallback) {
   return conversionCallback(from);
 }

@@ -1,26 +1,27 @@
 function getEvenNumbers(from, to) {
 
-  let numbers = []
-  for(let i = to; i < to;i++)
+  let amount = 0;
+  for(let i = from; i <= to;i++)
   {
     if(i %2 == 0)
     {
-      numbers.push(i);
+      amount+=1;
     }
   }
-  return numbers
-
+  return amount
 }
 
-function toUpper(str)
+function getOccurencesOfChar(char, str)
 {
-  let return_str = ""
-  for(ch of str)
+  let amount = 0;
+  for(let i = 0;i < str.length;i++)
   {
-    return_str += String.fromCharCode(ch.charCodeAt(0) - 32)
-
+    if( str[i] == char)
+    {
+      amount++;
+    }
   }
-  return return_str
+  return amount;
 }
 
 function moveVector(x,y,scalar)
@@ -55,25 +56,27 @@ function switchFunction(value)
       "undefined";
   }
 }
-function fibbonaci(number)
-{
-  let n1 = 0, n2 = 1, nextTerm;
 
-  for (let i = 1; i <= number; i++) {
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
-  }
-  return n1
+function fibonacci(element) {
+  if (element === 0) return 0;
+  if (element === 1) return 1;
+  
+  return fibonacci(element - 2) + fibonacci(element - 1);
 }
+
+
 function factorialize(num) {
-  if (num < 0) 
-    return -1;
-  else if (num == 0) 
-    return 1;
-  else {
-    return (num * factorialize(num - 1));
-  }
+
+    var result = num;
+    if (num === 0 || num === 1) 
+      return 1; 
+    while (num > 1) { 
+      num--;
+      result *= num;
+    }
+    return result;
+  
+
 }
 function returnPowerOf(number)
 {
@@ -86,11 +89,11 @@ function convertFtoC(temp)
 }
 module.exports = {};
 module.exports.getEvenNumbers = getEvenNumbers
-module.exports.toUpper = toUpper
+module.exports.getOccurencesOfChar = getOccurencesOfChar
 module.exports.moveVector = moveVector
 module.exports.arrayFunction= arrayFunction
 module.exports.switchFunction = switchFunction
-module.exports.fibbonaci=fibbonaci
+module.exports.fibonacci=fibonacci
 module.exports.factorialize=factorialize
 module.exports.returnPowerOf=returnPowerOf
 module.exports.convertFtoC=convertFtoC
