@@ -152,8 +152,33 @@ test('Sorted shelf', () => {
   expect(s2.books[0]).toStrictEqual(b2)
   expect(s2.books[1]).toStrictEqual(b21)
   expect(s2.books[2]).toStrictEqual(b)
-  expect(s2.books[3]).toStrictEqual(b31)
-  expect(s2.books[4]).toStrictEqual(b3)
+  expect(s2.books[3]).toStrictEqual(b3)
+  expect(s2.books[4]).toStrictEqual(b31)
   expect(s2.books[5]).toStrictEqual(b32)
+})
+test('Library test', () => {
+  const b = new functions.Book(3315, 'Jorgdie La Forge', 'Hyperspace Introduction', 331, 'Technical')
+  const b2 = new functions.Book(4415, 'Data', 'InterHuman Communications', 52, 'Physio')
+  const b21 = new functions.Book(5526, 'Data', 'Positronic brain schematics', 246, 'Technical')
+
+  const b3 = new functions.Book(1253, 'Spot', 'How to meow', 656, 'Animals behaviour')
+  const b31 = new functions.Book(5762, 'Spot', 'How to hiss', 441, 'Animals behaviour')
+  const b32 = new functions.Book(3361, 'Spot', 'How to morph into lizard', 774, 'Animals behaviour')
+
+  const s = new functions.SortedShelf((first, second) => { return first.pageNumbers - second.pageNumbers })
+  s.addBook(b)
+  s.addBook(b2)
+  s.addBook(b3)
+  s.addBook(b31)
+  s.addBook(b32)
+  s.addBook(b21)
+
+  const l = new functions.Library()
+  l.addShelf(s)
+  const dataBooks = l.getBookByAuthor('Data')
+  expect(dataBooks.length).toEqual(2)
+  expect(dataBooks[0]).toStrictEqual(b2)
+  expect(dataBooks[1]).toStrictEqual(b21)
+
 
 })

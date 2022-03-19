@@ -33,9 +33,8 @@ class SortedShelf extends Shelf {
   }
 
   addBook (book) {
-      super.addBook(book)
-      this.books.sort(this.sortingFunction)
-
+    super.addBook(book)
+    this.books.sort(this.sortingFunction)
   }
 }
 
@@ -43,9 +42,32 @@ class Library {
   constructor () {
     this.shelfs = []
   }
-  addShelf(shelf)
-  {
-      this.shelfs.push(shelf);
+
+  addShelf (shelf) {
+    this.shelfs.push(shelf)
+  }
+
+  getBookByAuthor (searchedAuthor) {
+    const books = []
+    for (let i = 0; i < this.shelfs.length; i++) {
+      const filteredBooks = (this.shelfs[i]).books.filter((item) => { return item.author === searchedAuthor })
+      for (let k = 0; k < filteredBooks.length; k++) {
+        books.push(filteredBooks[k])
+      }
+    }
+    return books
+  }
+
+  getBookByISBN () {
+
+  }
+
+  getBookByGenre () {
+
+  }
+
+  getBookByTitle () {
+
   }
 }
 
@@ -53,4 +75,4 @@ module.exports = {}
 module.exports.Book = Book
 module.exports.Shelf = Shelf
 module.exports.SortedShelf = SortedShelf
-
+module.exports.Library = Library
