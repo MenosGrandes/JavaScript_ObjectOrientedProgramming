@@ -15,11 +15,14 @@ Create class ``Book`` which will have properties:
 * title
 * author
 * genre
+
 In addition this class have an constructor in which all those properties are set.
 
 ## Second test
 Create class ``Shelf``.
+
 ``Shelf`` should have property called ``books`` which is the array of stored books on shelf
+
 ``Shelf`` must have an function:
 * addBook, pass 1 argument which will be a book that need to be added to this shelf
 
