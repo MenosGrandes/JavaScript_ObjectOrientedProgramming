@@ -21,7 +21,7 @@ function getOccurencesOfChar (char, str) {
 function moveVector (x, y, scalar) {
   x = x + scalar
   y = y + scalar
-  return [x, y]
+  return { x: x, y: y }
 }
 
 function arrayFunction (number) {
