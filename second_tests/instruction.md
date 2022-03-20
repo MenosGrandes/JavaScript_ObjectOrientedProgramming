@@ -65,11 +65,12 @@ Add ``addUser`` function to ``Library`` that will add given user to ``users``
 
 ## Tenth test
 Add boolean parameter ``borrowed`` to ``Book``.
+
 Add parameter ``books`` to ``User``. It will store all books that was borrowed by user.
 
 Add function ``borrowABook`` to ``Library`` which will get two parameters:
-* user -> for which user the book will be borrowed
-* book -> which book will be borrowed for given user
+* ``user`` -> for which user the book will be borrowed
+* ``book`` -> which book will be borrowed for given user
 
 This function will:
 * check if there is a given user in ``users``
