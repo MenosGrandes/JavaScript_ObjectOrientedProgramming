@@ -9,8 +9,6 @@ test('Book creation', () => {
   expect(anny).toHaveProperty('pageNumbers')
   expect(anny).toHaveProperty('genre')
 
-  expect(anny).toHaveProperty('genre')
-
   expect(anny.ISBN).toEqual(1234)
   expect(anny.author).toMatch('Lucy Maud Montgomery')
   expect(anny.title).toMatch('Anne of Green Gables')
@@ -26,7 +24,6 @@ test('Add to shelf', () => {
   const s = new functions.Shelf()
 
   expect(s).toHaveProperty('addBook')
-  expect(s).toHaveProperty('getAllBy')
   expect(s).toHaveProperty('books')
 
   s.addBook(b)
@@ -81,6 +78,7 @@ test('Filter all books by', () => {
   const b32 = new functions.Book(3361, 'Spot', 'How to morph into lizard', 774, 'Animals behaviour')
 
   const s = new functions.Shelf()
+  expect(s).toHaveProperty('getAllBy')
   s.addBook(b)
   s.addBook(b2)
   s.addBook(b3)
@@ -372,7 +370,6 @@ test('LibraryUser getBooks for user', () => {
 
   const l = new functions.Library()
   l.addShelf(s)
-  expect(l).toHaveProperty('addUser')
 
   const JKRowloong = new functions.User()
   const JKRowloong1 = new functions.User()
@@ -391,5 +388,12 @@ test('LibraryUser getBooks for user', () => {
   expect(() => l.borrowABook(JKRowloong, b)).toThrow(functions.NoSuchBookOnShelf)
   s.addBook(b)
   expect(() => l.borrowABook(JKRowloong, b)).not.toThrow(functions.NoSuchBookOnShelf)
+  expect(b).toHaveProperty('borrowed', true)
+  expect(b32).toHaveProperty('borrowed', false)
+  expect(JKRowloong).toHaveProperty('books', [b])
 
+expect(() => l.borrowABook(JKRowloong2, b)).toThrow(functions.AlreadyBorrowed)
+  expect(b).toHaveProperty('borrowed', true)
+  expect(JKRowloong).toHaveProperty('books', [b])
+  expect(JKRowloong2).toHaveProperty('books', [])
 })

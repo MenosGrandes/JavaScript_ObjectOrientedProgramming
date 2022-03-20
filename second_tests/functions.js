@@ -39,6 +39,10 @@ class SortedShelf extends Shelf {
     this.books.sort(this.sortingFunction)
   }
 }
+function AlreadyBorrowed(message) {
+    this.message = message;
+    this.name = 'AlreadyBorrowed';
+  }
 function UndefinedUser(message) {
     this.message = message;
     this.name = 'UndefinedUser';
@@ -66,13 +70,11 @@ class Library {
       var bookFound = false
       for(let i = 0 ; i < this.shelfs.length ; i++)
       {
-        console.log(this.shelfs[i].books)
 
         const filteredBooks = (this.shelfs[i]).books.filter((item) => { return item === _book })
 
         if(filteredBooks.length!=0)
         {
-            console.log(this.shelfs)
 
             bookFound = true
             break
@@ -82,7 +84,15 @@ class Library {
       if(!bookFound)
       {
         throw new NoSuchBookOnShelf(`There is no such book in library with title = ${_book.title}`)
+        return
       }
+    if(_book.borrowed)
+    {
+      throw new AlreadyBorrowed(`${_book.title} is already borrowed!`)
+      return
+    }
+
+    _book.borrowed = true
 
     user.books.push(_book)
   }
@@ -184,5 +194,6 @@ module.exports.Library = Library
 module.exports.User = User
 module.exports.UndefinedUser = UndefinedUser
 module.exports.NoSuchBookOnShelf = NoSuchBookOnShelf
+module.exports.AlreadyBorrowed= AlreadyBorrowed
 
 
