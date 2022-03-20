@@ -9,7 +9,7 @@ This is the link to the [Jest](https://jestjs.io/docs/getting-started) documenta
 
 <span style="color:red">PLAGIARISM IS STRICTLY FORBIDDEN WILL BE TREATED AS FAILURE WITH NO POSSIBILITY TO ATTEND AT ANY RESIT FOR ALL INVOLVED </span>.
 
-##First test
+## First test
 Create class ``Book`` which will have properties:
 * ISBN
 * title
@@ -23,20 +23,20 @@ Create class ``Shelf``.
 ``Shelf`` must have an function:
 * addBook, pass 1 argument which will be a book that need to be added to this shelf
 
-##Third test
+## Third test
 Add to ``Shelf`` function:
 * ``removeBook`` that get's an function as parameter which will remove all books from shelf that meets the given criteria
 
-##Forth test
+## Forth test
 Add to ``Shelf`` function:
 * ``getAllBy`` that get's an function as parameter which will fetch all books by given criteria. Books that have matched those criteria are returned as new array. This function does not change any of books on given shelf.
 
-##Fifth test
+## Fifth test
 Create ``SortedShelf`` class that inherits all functions and attributes from ``Shelf``.
 In constructor of ``SortedShelf`` sorting function must be provided and saved as attribute of this class in name of ``sortingFunction``.
 When function ``addBook`` is called whole collection of books have to be sorted by ``sortingFunction``.
 
-##Sixth test
+## Sixth test
 Create ``Library`` class that have:
 * ``shelfs`` -> array of shelfs in library
 * function ``addShelf`` -> which get 1 parameter and will add a given shelf to ``shelfs``
@@ -45,7 +45,7 @@ Create ``Library`` class that have:
 * function ``getBookByGenre``-> which will return all books from all ``shelfs`` that meets the criteria of passed string argument. 
 * function ``getBookByTitle``-> which will return all books from all ``shelfs`` that meets the criteria of passed string argument. 
 
-##Seventh test
+## Seventh test
 To ``Library`` class add:
 * function ``getBookByAuthorRegex`` -> which will return all books from all ``shelfs`` that meets the criteria of passed regex argument,
 * function ``getBookByGenreRegex`` -> which will return all books from all ``shelfs`` that meets the criteria of passed regex,
