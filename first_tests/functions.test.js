@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 // https://obfuscator.io/ USE THIS!
 
-const functions = require('./functions')
+const functions = require('./functions.obs.js')
 
 test('get all event numbers', () => {
   const expected = [[0, 10, 6], [0, 13, 7], [-151, 122, 137], [30, 5122, 2547], [5432, 699347, 346958]]

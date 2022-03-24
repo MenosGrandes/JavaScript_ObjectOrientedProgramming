@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
-const { TestWatcher } = require('jest')
-// const sum = require('./sum.js');
+ const sum = require('./sum.js');
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum.sum(1, 2)).toBe(3)
@@ -19,6 +18,7 @@ test('convertFromMeterToJard test', () => {
   const expected_30 = sum.convert(30, sum.convertFromMeterToJard)
   expect(expected_30).toBeCloseTo(32.808399, 5)
 
+  
   const expected_40 = sum.convert(40, sum.convertFromMeterToJard)
   expect(expected_40).toBeCloseTo(43.7445319, 5)
 
