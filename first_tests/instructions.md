@@ -1,15 +1,18 @@
 # Instruction for first graded exercise on OO JS
 
-You will have **45** minutes to write code that will pass all **10** provided tests. \
+You will have to write code that will pass all **10** provided tests. \
 File in which all test are written is called **functions.test.js**.\
 The code for test is hashed, so You will not understand it's details. \
 
 ## How to create environment and run tests?
-Those steps have been shown on 3th lesson of OOJS assignment.
+Those steps have been shown on 3rd lesson of OOJS assignment.
 
 Create empty folder.
 
-Download provided **functions.test.js** file inside empty folder.
+In assignment You will have zipped file called **functions.test.zip**.\
+ Inside of this archive file  **functions.test.js** will be available.\
+
+Unzip this archive into empty folder.
 
 Install *jest* library in created folder running this command in terminal:\
 ``npm install --save-dev jest``
@@ -36,6 +39,11 @@ It should return information that test have been runned. In example:\
 # Assignment
 
 You have to create a file called **functions.js** and in this file create and export all functions that are need by the test file **functions.test.js** ( downloaded from Assignment in MSTeams).\
+
+You will have to attach Your finished **functions.js** to the Assignment, before time for the Assignment expire.\
+
+
+
 Both of those files have to be inside same folder, Jest and NPM force this.
 
 This is the link to the [Jest](https://jestjs.io/docs/getting-started) documentation. You can use it while working on code.
