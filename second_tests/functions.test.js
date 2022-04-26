@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-const functions = require('./functions')
+const functions = require('./functions.js')
 
 test('Book creation', () => {
   const anny = new functions.Book(1234, 'Lucy Maud Montgomery', 'Anne of Green Gables', 130, 'Romance')
