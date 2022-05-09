@@ -187,5 +187,13 @@ class User {
 }
 
 module.exports = {}
+module.exports.Book = Book
+module.exports.Shelf = Shelf
+module.exports.SortedShelf = SortedShelf
+module.exports.Library = Library
+module.exports.User = User
+module.exports.UndefinedUser = UndefinedUser
+module.exports.NoSuchBookOnShelf = NoSuchBookOnShelf
+module.exports.AlreadyBorrowed= AlreadyBorrowed
 
 

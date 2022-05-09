@@ -11,6 +11,7 @@ This is the link to the [Jest](https://jestjs.io/docs/getting-started) documenta
 
 ## First test
 Create class ``Book`` which will have properties:
+
 * ISBN
 * title
 * author
@@ -21,26 +22,36 @@ In addition this class have an constructor in which all those properties are set
 ## Second test
 Create class ``Shelf``.
 
-``Shelf`` should have property called ``books`` which is the array of stored books on shelf
+``Shelf`` should have property called ``books`` which is the array of stored books on shelf.
 
 ``Shelf`` must have an function:
+
 * addBook, pass 1 argument which will be a book that need to be added to this shelf
 
 ## Third test
 Add to ``Shelf`` function:
-* ``removeBook`` that get's an function as parameter which will remove all books from shelf that meets the given criteria
 
-## Forth test
+* ``removeBook`` that get's an function as parameter which will remove all books from shelf that meets the given criteria
+\
+\
+\
+\
+
+
+
+## Fourth test
 Add to ``Shelf`` function:
+
 * ``getAllBy`` that get's an function as parameter which will fetch all books by given criteria. Books that have matched those criteria are returned as new array. This function does not change any of books on given shelf.
 
 ## Fifth test
-Create ``SortedShelf`` class that inherits all functions and attributes from ``Shelf``.
-In constructor of ``SortedShelf`` sorting function must be provided and saved as attribute of this class in name of ``sortingFunction``.
+Create ``SortedShelf`` class that inherits all functions and attributes from ``Shelf``.\
+In constructor of ``SortedShelf`` sorting function must be provided and saved as attribute of this class in name of ``sortingFunction``.\
 When function ``addBook`` is called whole collection of books have to be sorted by ``sortingFunction``.
 
 ## Sixth test
 Create ``Library`` class that have:
+
 * ``shelfs`` -> array of shelfs in library
 * function ``addShelf`` -> which get 1 parameter and will add a given shelf to ``shelfs``
 * function ``getBookByAuthor`` -> which will return all books from all ``shelfs`` that meets the criteria of passed string argument. This function does not remove any books from ``shelfs``
@@ -50,12 +61,14 @@ Create ``Library`` class that have:
 
 ## Seventh test
 To ``Library`` class add:
+
 * function ``getBookByAuthorRegex`` -> which will return all books from all ``shelfs`` that meets the criteria of passed regex argument,
 * function ``getBookByGenreRegex`` -> which will return all books from all ``shelfs`` that meets the criteria of passed regex,
 * function ``getBookByTitleRegex`` -> which will return all books from all ``shelfs`` that meets the criteria of passed regex argument.
 
 ## Eight test
 Create ``User`` class that will have:
+
 * ``id`` parameter which will be unique for each ``User``, and incremented every time that new ``User`` object will be created. This parameter must start from 0.
 
 Add ``users`` parameter to ``Library`` class. It should be stored as ``Set``, that there is no possibility to duplicate users in given library.
@@ -69,10 +82,12 @@ Add boolean parameter ``borrowed`` to ``Book``.
 Add parameter ``books`` to ``User``. It will store all books that was borrowed by user.
 
 Add function ``borrowABook`` to ``Library`` which will get two parameters:
+
 * ``user`` -> for which user the book will be borrowed
 * ``book`` -> which book will be borrowed for given user
 
 This function will:
+
 * check if there is a given user in ``users``
   * If there is not throw an ``UndefinedUser`` error
 * if there is a given user, look for given book in all shelfs on library
